@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Của Tôi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 400px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-container h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .login-container p {
+            color: #666;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            margin-top: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .main-content {
+            display: none;
+            width: 90%;
+            max-width: 1200px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .header h1 {
+            color: #667eea;
+        }
+
+        .logout-btn {
+            padding: 10px 20px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .logout-btn:hover {
+            background: #c0392b;
+        }
+
+        .content-section {
+            margin-bottom: 30px;
+        }
+
+        .content-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .content-section p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 25px;
+            border-radius: 12px;
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: rgba(255,255,255,0.9);
+        }
+    </style>
+</head>
+<body>
+    <!-- Trang đăng nhập -->
+    <div class="login-container" id="loginPage">
+        <h1>🔐 Đăng Nhập</h1>
+        <p>Vui lòng nhập mật khẩu để tiếp tục</p>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+            </div>
+            <button type="submit" class="btn">Đăng Nhập</button>
+            <div class="error-message" id="errorMsg">
+                ❌ Mật khẩu không đúng! Vui lòng thử lại.
+            </div>
+        </form>
+        <p style="margin-top: 20px; font-size: 12px; color: #999;">
+            Mật khẩu mặc định: <strong>123456</strong>
+        </p>
+    </div>
+
+    <!-- Nội dung chính (ẩn ban đầu) -->
+    <div class="main-content" id="mainContent">
+        <div class="header">
+            <h1>✨ Chào Mừng Đến Website Của Tôi</h1>
+            <button class="logout-btn" onclick="logout()">Đăng Xuất</button>
+        </div>
+
+        <div class="content-section">
+            <h2>Giới Thiệu</h2>
+            <p>Đây là nội dung được bảo vệ bằng mật khẩu. Bạn đã đăng nhập thành công!</p>
+            <p>Website này được tạo với HTML, CSS và JavaScript thuần, hoàn toàn có thể chạy trên GitHub Pages.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Các Tính Năng</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🔒 Bảo Mật</h3>
+                    <p>Bảo vệ nội dung với mật khẩu</p>
+                </div>
+                <div class="card">
+                    <h3>🎨 Đẹp Mắt</h3>
+                    <p>Giao diện hiện đại, gradient đẹp</p>
+                </div>
+                <div class="card">
+                    <h3>📱 Responsive</h3>
+                    <p>Tương thích mọi thiết bị</p>
+                </div>
+                <div class="card">
+                    <h3>⚡ Nhanh</h3>
+                    <p>Không cần backend, chạy ngay</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Thông Tin Thêm</h2>
+            <p>Bạn có thể tùy chỉnh nội dung này theo ý muốn. Thêm hình ảnh, video, hoặc bất kỳ nội dung nào bạn muốn!</p>
+        </div>
+    </div>
+
+    <script>
+        // Mật khẩu (bạn có thể thay đổi)
+        const correctPassword = 'mtieniuavi:>';
+        
+        // Kiểm tra đã đăng nhập chưa
+        let isLoggedIn = false;
+
+        // Xử lý form đăng nhập
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('errorMsg');
+            
+            if (password === correctPassword) {
+                // Đăng nhập thành công
+                isLoggedIn = true;
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+                errorMsg.style.display = 'none';
+            } else {
+                // Sai mật khẩu
+                errorMsg.style.display = 'block';
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+            }
+        });
+
+        // Hàm đăng xuất
+        function logout() {
+            isLoggedIn = false;
+            document.getElementById('loginPage').style.display = 'block';
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('password').value = '';
+        }
+    </script>
+</body>
+</html>
