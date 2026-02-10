@@ -18,20 +18,15 @@ Website Valentine đặc biệt được tạo ra với rất nhiều yêu thư�
 ## 💡 Tips
 
 - Đọc kỹ từng trang để không bỏ lỡ chi tiết nào!
-- Thử các nút khác nhau để xem hiệu ứng
 - Nhớ nhấn "Lưu kỷ niệm này" ở trang cuối
-- Di chuyển chuột xung quanh để thấy hiệu ứng cursor (trang 6 & 9)
 
 ---
 
 ## 💖 Lời nhắn
 
-Website này được làm với rất nhiều tâm huyết và yêu thương.
-Mỗi dòng code, mỗi hiệu ứng đều mang theo một thông điệp:
+**"Avi rất đặc biệt và dễ thương!"**
 
-**"Bạn rất đặc biệt và dễ thương!"**
-
-Chúc bạn một ngày Valentine đầu tiên thật vui vẻ và đáng nhớ! 
+Chúc Avi một ngày Valentine đầu tiên thật vui vẻ và đáng nhớ! 
 
 ---
 
