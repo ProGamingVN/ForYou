@@ -3,291 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Của Tôi</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .login-container {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            width: 90%;
-            max-width: 400px;
-            animation: slideIn 0.5s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .login-container h1 {
-            color: #667eea;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .login-container p {
-            color: #666;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        .input-group input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn:active {
-            transform: translateY(0);
-        }
-
-        .error-message {
-            color: #e74c3c;
-            margin-top: 10px;
-            text-align: center;
-            display: none;
-        }
-
-        .main-content {
-            display: none;
-            width: 90%;
-            max-width: 1200px;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            animation: fadeIn 0.5s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
-        .header h1 {
-            color: #667eea;
-        }
-
-        .logout-btn {
-            padding: 10px 20px;
-            background: #e74c3c;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 500;
-        }
-
-        .logout-btn:hover {
-            background: #c0392b;
-        }
-
-        .content-section {
-            margin-bottom: 30px;
-        }
-
-        .content-section h2 {
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .content-section p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 25px;
-            border-radius: 12px;
-            color: white;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: rgba(255,255,255,0.9);
-        }
-    </style>
+    <title>Khu vực đặc biệt ⚠️</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Trang đăng nhập -->
-    <div class="login-container" id="loginPage">
-        <h1>🔐 Đăng Nhập</h1>
-        <p>Vui lòng nhập mật khẩu để tiếp tục</p>
-        <form id="loginForm">
-            <div class="input-group">
-                <label for="password">Mật khẩu:</label>
-                <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+    <!-- Phần 1: Đăng nhập -->
+    <div class="page active" id="page1">
+        <div class="container">
+            <div class="floating-hearts"></div>
+            <div class="floating-elements">
+                <div class="sunflower"></div>
+                <div class="sunflower"></div>
+                <div class="kuromi"></div>
             </div>
-            <button type="submit" class="btn">Đăng Nhập</button>
-            <div class="error-message" id="errorMsg">
-                ❌ Mật khẩu không đúng! Vui lòng thử lại.
+            
+            <h1 class="title fade-in">Khu vực đặc biệt ⚠️</h1>
+            <p class="description fade-in-delay">
+                Trang này chỉ dành cho một người duy nhất trên Trái Đất.<br>
+                Người không đúng đối tượng thì... vô cũng được, nhưng mà chắc không hiểu gì đâu
+            </p>
+            
+            <div class="login-box fade-in-delay-2">
+                <input type="password" id="passwordInput" placeholder="Nhập mật khẩu..." class="password-input">
+                <button class="btn-primary pulse" onclick="checkPassword()">
+                    Đăng nhập thử coi
+                </button>
+                <p class="error-message" id="errorMessage"></p>
             </div>
-        </form>
-        <p style="margin-top: 20px; font-size: 12px; color: #999;">
-            Mật khẩu mặc định: <strong>123456</strong>
-        </p>
-    </div>
-
-    <!-- Nội dung chính (ẩn ban đầu) -->
-    <div class="main-content" id="mainContent">
-        <div class="header">
-            <h1>✨ Chào Mừng Đến Website Của Tôi</h1>
-            <button class="logout-btn" onclick="logout()">Đăng Xuất</button>
-        </div>
-
-        <div class="content-section">
-            <h2>Giới Thiệu</h2>
-            <p>Đây là nội dung được bảo vệ bằng mật khẩu. Bạn đã đăng nhập thành công!</p>
-            <p>Website này được tạo với HTML, CSS và JavaScript thuần, hoàn toàn có thể chạy trên GitHub Pages.</p>
-        </div>
-
-        <div class="content-section">
-            <h2>Các Tính Năng</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>🔒 Bảo Mật</h3>
-                    <p>Bảo vệ nội dung với mật khẩu</p>
-                </div>
-                <div class="card">
-                    <h3>🎨 Đẹp Mắt</h3>
-                    <p>Giao diện hiện đại, gradient đẹp</p>
-                </div>
-                <div class="card">
-                    <h3>📱 Responsive</h3>
-                    <p>Tương thích mọi thiết bị</p>
-                </div>
-                <div class="card">
-                    <h3>⚡ Nhanh</h3>
-                    <p>Không cần backend, chạy ngay</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Thông Tin Thêm</h2>
-            <p>Bạn có thể tùy chỉnh nội dung này theo ý muốn. Thêm hình ảnh, video, hoặc bất kỳ nội dung nào bạn muốn!</p>
+            
+            <p class="hint">Gợi ý: Người dễ thương mới qua được.</p>
         </div>
     </div>
 
-    <script>
-        // Mật khẩu (bạn có thể thay đổi)
-        const correctPassword = 'mtieniuavi:>';
-        
-        // Kiểm tra đã đăng nhập chưa
-        let isLoggedIn = false;
-
-        // Xử lý form đăng nhập
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+    <!-- Phần 2: Ủa, sao vô được -->
+    <div class="page" id="page2">
+        <div class="container">
+            <div class="confetti-container"></div>
+            <h1 class="title surprise">Ủa, sao vô được hay vậy O_O</h1>
+            <div class="content-box">
+                <p class="content">
+                    Dù sao thì, trang web này được tạo ra chỉ dành cho người dễ thương thoii. 
+                    Và người đang đọc dòng này chính là người đó đấyy :3 <span class="chick">🐣</span>
+                </p>
+                <p class="content">
+                    Nếu bạn đang đọc tới đây... thì chúc mừng nha, bạn vượt ải "dễ thương" rồi đó
+                </p>
+            </div>
+            <button class="btn-primary bounce" onclick="goToPage(3)">
+                Tiếp tục nè
+            </button>
             
-            const password = document.getElementById('password').value;
-            const errorMsg = document.getElementById('errorMsg');
-            
-            if (password === correctPassword) {
-                // Đăng nhập thành công
-                isLoggedIn = true;
-                document.getElementById('loginPage').style.display = 'none';
-                document.getElementById('mainContent').style.display = 'block';
-                errorMsg.style.display = 'none';
-            } else {
-                // Sai mật khẩu
-                errorMsg.style.display = 'block';
-                document.getElementById('password').value = '';
-                document.getElementById('password').focus();
-            }
-        });
+            <div class="floating-puddings">
+                <div class="pudding"></div>
+                <div class="pudding"></div>
+            </div>
+        </div>
+    </div>
 
-        // Hàm đăng xuất
-        function logout() {
-            isLoggedIn = false;
-            document.getElementById('loginPage').style.display = 'block';
-            document.getElementById('mainContent').style.display = 'none';
-            document.getElementById('password').value = '';
-        }
-    </script>
+    <!-- Phần 3: Kiểm tra lại -->
+    <div class="page" id="page3">
+        <div class="container">
+            <div class="floating-chickens">
+                <div class="fried-chicken"></div>
+                <div class="fried-chicken"></div>
+            </div>
+            
+            <h1 class="title">Kiểm tra lại lần nữa cho chắc nè</h1>
+            <p class="content">
+                Trước khi đi tiếp, mình cần xác nhận một chuyện rất quan trọng:<br>
+                <strong>Bạn có phải là người dễ thương không?</strong>
+            </p>
+            
+            <div class="button-group" id="checkButtons">
+                <button class="btn-choice" onclick="showResult()">Có chứ, hỏi kỳ</button>
+                <button class="btn-choice" onclick="showResult()">Tất nhiên rồi</button>
+            </div>
+            
+            <div class="result-box hidden" id="resultBox">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p class="result-text">Kết quả: 100% dễ thương. Không cần kiểm tra lại nữa</p>
+                <p class="result-text">Ok, đi tiếp nè</p>
+                <button class="btn-primary glow" onclick="goToPage(4)">Đi thôiii</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phần 4: Nói nhỏ -->
+    <div class="page" id="page4">
+        <div class="container">
+            <div class="sparkles"></div>
+            <h1 class="title whisper">Nói nhỏ bạn nghe nè...</h1>
+            <div class="content-box special">
+                <p class="content soft">
+                    Có những người xuất hiện một cái là tự nhiên thấy ngày hôm đó đỡ mệt hơn. 
+                    Có những người chỉ cần nhắn một tin thôi cũng đủ làm mình cười ngốc cả buổi.
+                </p>
+                <p class="content soft highlight">
+                    Và ừ... không hiểu sao, nhưng <strong>bạn thuộc kiểu người đó</strong> đó.
+                </p>
+            </div>
+            <button class="btn-primary glow" onclick="goToPage(5)">
+                Đọc tiếp...
+            </button>
+        </div>
+    </div>
+
+    <!-- Phần 5: Câu hỏi quan trọng -->
+    <div class="page" id="page5">
+        <div class="container">
+            <h1 class="title">Đố avi biết, hôm nay là ngày gì nè?</h1>
+            
+            <div class="quiz-buttons" id="quizButtons">
+                <button class="btn-yes" id="yesBtn" onclick="goToPage(6)">Biết chứ</button>
+                <button class="btn-no" id="noBtn" onclick="handleNoClick()">Hả, không biết gì hết</button>
+            </div>
+            
+            <div class="final-answer hidden" id="finalAnswer">
+                <button class="btn-primary bounce" onclick="goToPage(6)">
+                    Giỡn thoii, ai chả bít :>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phần 6: Bật mí đáp án -->
+    <div class="page" id="page6">
+        <div class="container">
+            <div class="hearts-rain"></div>
+            <h1 class="title big-reveal">Thật ra hôm nay là...</h1>
+            <div class="valentine-reveal">
+                <h2 class="valentine-text">Valentine đóoooo</h2>
+                <div class="first-valentine">
+                    <p class="special-note">✨ Valentine đầu tiên của tụi mình ✨</p>
+                </div>
+            </div>
+            <div class="content-box">
+                <p class="content">
+                    Một ngày để nhắc lại là: có một người đang nghĩ tới bạn, 
+                    muốn bạn vui, và muốn bạn cười nhiều hơn mỗi ngày.
+                </p>
+                <p class="content highlight">
+                    Nên là... cái web này sinh ra để làm chuyện đó đó
+                </p>
+            </div>
+            <button class="btn-primary pulse" onclick="goToPage(7)">
+                Đọc tiếp nha
+            </button>
+        </div>
+    </div>
+
+    <!-- Phần 7: Liệt kê điều dễ thương -->
+    <div class="page" id="page7">
+        <div class="container">
+            <h1 class="title">Một vài điều dễ thương về bạn (theo ý mình nha)</h1>
+            
+            <div class="cute-list" id="cuteList">
+                <div class="cute-item hidden">
+                    <span class="cute-icon">✨</span>
+                    <p>Cười cái là thấy vui liền</p>
+                </div>
+                <div class="cute-item hidden">
+                    <span class="cute-icon">💭</span>
+                    <p>Nói chuyện cái là thấy đỡ buồn liền</p>
+                </div>
+                <div class="cute-item hidden">
+                    <span class="cute-icon">☀️</span>
+                    <p>Xuất hiện cái là ngày hôm đó tự nhiên "ổn áp" hơn liền</p>
+                </div>
+                <div class="cute-item hidden">
+                    <span class="cute-icon">🌸</span>
+                    <p>Và còn nhiều cái nữa, kể chắc hết nguyên cái website</p>
+                </div>
+            </div>
+            
+            <div class="nickname-section">
+                <p class="content soft">Biệt danh yêu thích:</p>
+                <div class="nicknames">
+                    <span class="nickname">Gà nhỏ vĩ đại</span>
+                    <span class="nickname">Eve</span>
+                    <span class="nickname">Chiến sĩ nhỏ</span>
+                    <span class="nickname">Pudding</span>
+                    <span class="nickname">Đậu đỏ</span>
+                </div>
+            </div>
+            
+            <button class="btn-primary glow" onclick="goToPage(8)">
+                Tiếp nè
+            </button>
+        </div>
+    </div>
+
+    <!-- Phần 8: Món quà nhỏ -->
+    <div class="page" id="page8">
+        <div class="container">
+            <div class="gift-box-animation">
+                <div class="gift-box"></div>
+            </div>
+            
+            <h1 class="title">Quà nè</h1>
+            <div class="content-box special">
+                <p class="content">
+                    Món quà này không gói được, cũng không cột nơ được luôn. 
+                    Nó chỉ là một cái website nhỏ nhỏ thôi...
+                </p>
+                <p class="content highlight">
+                    nhưng mà trong đó có nguyên một đống <strong>"quan tâm"</strong> bỏ vô
+                </p>
+                <p class="content soft">
+                    Mong là bạn sẽ thích.
+                </p>
+            </div>
+            <button class="btn-primary bounce" onclick="goToPage(9)">
+                Xem tiếp nha
+            </button>
+        </div>
+    </div>
+
+    <!-- Phần 9: Kết -->
+    <div class="page" id="page9">
+        <div class="container">
+            <div class="final-hearts"></div>
+            
+            <h1 class="title">Tóm lại là...</h1>
+            <div class="content-box final">
+                <p class="content">
+                    Cảm ơn bạn vì đã đọc tới đây nha.
+                </p>
+                <p class="content special-message">
+                    Chúc bạn một ngày Valentine đầu tiên của tụi mình thật vui
+                </p>
+                <p class="content highlight">
+                    Và nhớ là: <strong>bạn dễ thương thiệt đó</strong>, không có nói chơi đâu
+                </p>
+                <div class="signature">
+                    <p>Dành cho: Nguyễn Anh Vy</p>
+                    <p class="love-note">💕 Valentine 2024 💕</p>
+                </div>
+            </div>
+            
+            <div class="final-buttons">
+                <button class="btn-secondary" onclick="goToPage(1)">
+                    Xem lại từ đầu
+                </button>
+                <button class="btn-primary smile" onclick="makeSmile()">
+                    Cười cái coi
+                </button>
+                <button class="btn-secondary" onclick="saveMemory()">
+                    Lưu kỷ niệm này
+                </button>
+            </div>
+            
+            <div class="smile-overlay hidden" id="smileOverlay">
+                <div class="smile-content">
+                    <div class="big-smile">😊</div>
+                    <p>Cười nhiều vào nha! 💖</p>
+                    <button class="btn-primary" onclick="closeSmile()">Ok nè</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
