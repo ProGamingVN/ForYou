@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khu vực đặc biệt ⚠️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Phần 1: Đăng nhập -->
+    <div class="page active" id="page1">
+        <div class="container">
+            <div class="floating-hearts"></div>
+            <div class="floating-elements">
+                <div class="sunflower"></div>
+                <div class="sunflower"></div>
+                <div class="kuromi"></div>
+            </div>
+            
+            <h1 class="title fade-in">Khu vực đặc biệt ⚠️</h1>
+            <p class="description fade-in-delay">
+                Trang này chỉ dành cho một người duy nhất trên Trái Đất.<br>
+                Người không đúng đối tượng thì... vô cũng được, nhưng mà chắc không hiểu gì đâu
+            </p>
+            
+            <div class="login-box fade-in-delay-2">
+                <input type="password" id="passwordInput" placeholder="Nhập mật khẩu..." class="password-input">
+                <button class="btn-primary pulse" onclick="checkPassword()">
+                    Đăng nhập thử coi
+                </button>
+                <p class="error-message" id="errorMessage"></p>
+            </div>
+            
+            <p class="hint">Gợi ý: Người dễ thương mới qua được.</p>
+        </div>
+    </div>
+
+    <!-- Phần 2: Ủa, sao vô được -->
+    <div class="page" id="page2">
+        <div class="container">
+            <div class="confetti-container"></div>
+            <h1 class="title surprise">Ủa, sao vô được hay vậy O_O</h1>
+            <div class="content-box">
+                <p class="content">
+                    Dù sao thì, trang web này được tạo ra chỉ dành cho người dễ thương thoii. 
+                    Và người đang đọc dòng này chính là người đó đấyy :3 <span class="chick">🐣</span>
+                </p>
+                <p class="content">
+                    Nếu bạn đang đọc tới đây... thì chúc mừng nha, bạn vượt ải "dễ thương" rồi đó
+                </p>
+            </div>
+            <button class="btn-primary bounce" onclick="goToPage(3)">
+                Tiếp tục nè
+            </button>
+            
+            <div class="floating-puddings">
+                <div class="pudding"></div>
+                <div class="pudding"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phần 3: Kiểm tra lại -->
+    <div class="page" id="page3">
+        <div class="container">
+            <div class="floating-chickens">
+                <div class="fried-chicken"></div>
+                <div class="fried-chicken"></div>
+            </div>
+            
+            <h1 class="title">Kiểm tra lại lần nữa cho chắc nè</h1>
+            <p class="content">
+                Trước khi đi tiếp, mình cần xác nhận một chuyện rất quan trọng:<br>
+                <strong>Avi có phải là người dễ thương không?</strong>
+            </p>
+            
+            <div class="button-group" id="checkButtons">
+                <button class="btn-choice" onclick="showResult()">Có chứ, hỏi kỳ</button>
+                <button class="btn-choice" onclick="showResult()">Tất nhiên rồi</button>
+            </div>
+            
+            <div class="result-box hidden" id="resultBox">
+                <p class="checking-text">Đang kiểm tra mức độ dễ thương...</p>
+                <div class="slider-container">
+                    <p class="slider-label">Tự đánh giá mức độ dễ thương của avi:</p>
+                    <input type="range" min="0" max="100" value="50" class="cuteness-slider" id="cutenessSlider">
+                    <p class="slider-value"><span id="sliderValue">50</span>%</p>
+                </div>
+                <div class="progress-bar hidden" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <button class="btn-secondary checking-btn" id="checkingBtn" onclick="startChecking()">
+                    Kiểm tra
+                </button>
+                <div class="final-result hidden" id="finalResult">
+                    <p class="result-text">Kết quả: 100% dễ thương. Không cần kiểm tra lại nữa</p>
+                    <p class="result-text">Ok, đi tiếp nè</p>
+                    <button class="btn-primary glow" onclick="goToPage(4)">Đi thôiii</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phần 4: Nói nhỏ -->
+    <div class="page" id="page4">
+        <div class="container">
+            <div class="sparkles"></div>
+            <h1 class="title whisper">Nói nhỏ avi nghe nè...</h1>
+            <div class="content-box special">
+                <p class="content soft">
+                    Có những ngày chẳng biết vì sao lại mệt, nhưng chỉ cần thấy avi là tự nhiên thấy nhẹ hơn. 
+                    Có những lúc chẳng có gì đặc biệt, nhưng chỉ cần avi nhắn một tin thôi cũng đủ làm mình vui cả buổi.
+                </p>
+                <p class="content soft highlight">
+                    Và ừ… không hiểu sao nữa, nhưng <strong>người đó lại là avi</strong>.
+                </p>
+            </div>
+            <button class="btn-primary glow" onclick="goToPage(5)">
+                Đọc tiếp...
+            </button>
+        </div>
+    </div>
+
+    <!-- Phần 5: Câu hỏi quan trọng -->
+    <div class="page" id="page5">
+        <div class="container">
+            <h1 class="title">Đố avi biết, hôm nay là ngày gì nè?</h1>
+            
+            <div class="quiz-buttons" id="quizButtons">
+                <button class="btn-yes" id="yesBtn" onclick="goToPage(6)">Biết chứ</button>
+                <button class="btn-no" id="noBtn" onclick="handleNoClick()">Hả, không biết gì hết</button>
+            </div>
+            
+            <div class="final-answer hidden" id="finalAnswer">
+                <button class="btn-primary bounce" onclick="goToPage(6)">
+                    Giỡn thoii, ai chả bít :>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phần 6: Bật mí đáp án -->
+    <div class="page" id="page6">
+        <div class="container">
+            <div class="hearts-rain"></div>
+            <h1 class="title big-reveal">Thật ra hôm nay là...</h1>
+            <div class="valentine-reveal">
+                <h2 class="valentine-text">Valentine đóoooo</h2>
+                <div class="first-valentine">
+                    <p class="special-note">✨ Valentine đầu tiên của tụi mình ✨</p>
+                </div>
+            </div>
+            <div class="content-box">
+                <p class="content">
+                    Một ngày để nhắc lại là: có một người đang nghĩ tới bạn, 
+                    muốn bạn vui, và muốn bạn cười nhiều hơn mỗi ngày.
+                </p>
+                <p class="content highlight">
+                    Nên là... cái web này sinh ra để làm chuyện đó đó
+                </p>
+            </div>
+            <button class="btn-primary pulse" onclick="goToPage(7)">
+                Đọc tiếp nha
+            </button>
+        </div>
+    </div>
+
+    <!-- Phần 7: Liệt kê điều dễ thương -->
+    <div class="page" id="page7">
+        <div class="container">
+            <h1 class="title">Một vài điều dễ thương về avi :3</h1>
+            
+            <div class="cute-list" id="cuteList">
+                <div class="cute-item hidden">
+                    <p>Hay cười, mà mỗi lần cười là nhìn cái thấy vui liền.</p>
+                </div>
+                <div class="cute-item hidden">
+                    <p>Nhắn mấy câu bình thường thôi mà đọc cũng thấy dễ thương.</p>
+                </div>
+                <div class="cute-item hidden">
+                    <p>Có những lúc quan tâm rất nhỏ, nhưng lại làm mtien nhớ hoài.</p>
+                </div>
+                <div class="cute-item hidden">
+                    <p>Đôi khi chỉ cần xuất hiện thôi là không khí tự nhiên nhẹ hơn hẳn.</p>
+                </div>
+                <div class="cute-item hidden">
+                    <p>Có mấy lúc nói chuyện linh tinh mà vẫn thấy vui, không hiểu sao luôn.</p>
+                </div>
+                <div class="cute-item hidden">
+                    <p>Có mấy thói quen nhỏ nhỏ, nhìn thì bình thường, mà lại thấy đáng yêu ghê.</p>
+                </div>
+            </div>
+            
+            <div class="content-box special">
+                <p class="content soft">
+                    Tóm lại là liệt kê chắc cũng không hết đâu, nên thôi… ghi nhiêu đây đủ biết là dễ thương rồi ha. 
+                    Avi làm gì cũng thấy dễ thương hết trơn 😌
+                </p>
+                <p class="content highlight">
+                    Nhiều khi cũng không cần làm gì đặc biệt, chỉ cần là avi thôi cũng đủ thấy dễ thương rồi.
+                </p>
+            </div>
+            
+            <div class="nickname-section">
+                <p class="content soft">Biệt danh yêu thích:</p>
+                <div class="nicknames">
+                    <span class="nickname">Gà nhỏ vĩ đại</span>
+                    <span class="nickname">Eve</span>
+                    <span class="nickname">Chiến sĩ nhỏ</span>
+                    <span class="nickname">Pudding</span>
+                    <span class="nickname">Đậu đỏ</span>
+                </div>
+            </div>
+            
+            <button class="btn-primary glow" onclick="goToPage(8)">
+                Tiếp nè
+            </button>
+        </div>
+    </div>
+
+    <!-- Phần 8: Món quà nhỏ -->
+    <div class="page" id="page8">
+        <div class="container">
+            <h1 class="title">Quà nè</h1>
+            
+            <div class="gift-container">
+                <div class="gift-box-animation" id="giftBox">
+                    <div class="gift-box" onclick="openGift()"></div>
+                    <div class="click-hint">
+                        <span class="arrow">👇</span>
+                        <p>Bấm vào đây!!!</p>
+                    </div>
+                </div>
+                <div class="gift-items hidden" id="giftItems"></div>
+            </div>
+            
+            <div class="content-box special">
+                <p class="content">
+                    Món quà này không gói được, cũng không cột nơ được luôn. 
+                    Nó chỉ là một cái website nhỏ nhỏ thôi...
+                </p>
+                <p class="content highlight">
+                    nhưng mà trong đó có nguyên một đống <strong>"quan tâm"</strong> bỏ vô
+                </p>
+                <p class="content soft">
+                    Mong là avi sẽ thích.
+                </p>
+            </div>
+            <button class="btn-primary bounce" onclick="goToPage(9)">
+                Xem tiếp nha
+            </button>
+        </div>
+    </div>
+
+    <!-- Phần 9: Kết -->
+    <div class="page" id="page9">
+        <div class="container">
+            <div class="final-hearts"></div>
+            
+            <h1 class="title">Tóm lại là...</h1>
+            <div class="content-box final">
+                <p class="content">
+                    Cảm ơn avi vì đã đọc tới đây nha.
+                </p>
+                <p class="content special-message">
+                    Chúc avi một ngày Valentine đầu tiên của tụi mình thật vui
+                </p>
+                <p class="content highlight">
+                    Và nhớ là: <strong>avi dễ thương thiệt đó</strong>, không có nói chơi đâu
+                </p>
+                <div class="signature">
+                    <p>Dành cho: Nguyễn Anh Vy</p>
+                    <p class="love-note">💕 Valentine 2026 💕</p>
+                </div>
+            </div>
+            
+            <div class="final-buttons">
+                <button class="btn-secondary" onclick="goToPage(1)">
+                    Xem lại từ đầu
+                </button>
+                <button class="btn-primary smile" onclick="makeSmile()">
+                    Cười cái coi
+                </button>
+                <button class="btn-secondary" onclick="saveMemory()">
+                    Lưu kỷ niệm này
+                </button>
+            </div>
+            
+            <div class="smile-overlay hidden" id="smileOverlay">
+                <div class="smile-content">
+                    <div class="big-smile">😊</div>
+                    <p>Cười nhiều vào nha! 💖</p>
+                    <button class="btn-primary" onclick="closeSmile()">Ok nè</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
